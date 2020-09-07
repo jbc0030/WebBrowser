@@ -1,22 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WebBrowser.UI
+namespace WindowsFormsApp1
 {
-    static class Program
+    public partial class WebBrowserUI : Form
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public WebBrowserUI()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            InitializeComponent();
+        }
+
+        private void WebBrowserUI_Load(object sender, EventArgs e)
+        {
+            this.Focus();
+            this.BringToFront();
+            this.Bounds = Screen.PrimaryScreen.Bounds;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
+            this.Activate();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Browser in Beta Mode developed by X");
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string url = textBox1.Text;
+
+                if (Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
+                {
+                    tabPage1.Text = url;
+                    webBrowser1.Navigate(url);
+                }
+            }
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            string url = textBox1.Text;
+
+            if (Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
+            {
+                tabPage1.Text = url;
+                webBrowser1.Navigate(url);
+            }
+        }
+
+        private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
