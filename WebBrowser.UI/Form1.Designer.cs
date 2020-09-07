@@ -158,7 +158,7 @@ namespace WebBrowser.UI
             //
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Text = "About : Jordan Corneil. Student ID is 903290388. This is all new to me, so I'm still figuring out c# and coding. Hope this is working.";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             //
             // toolStrip1
